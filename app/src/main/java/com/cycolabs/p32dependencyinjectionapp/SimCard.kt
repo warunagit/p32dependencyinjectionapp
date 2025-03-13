@@ -4,7 +4,11 @@ import android.util.Log
 
 class SimCard() {
 
-    private lateinit var serviceProvider: ServiceProvider
+    //method injection
+    //private lateinit var serviceProvider: ServiceProvider
+
+    //field injection
+    public lateinit var serviceProvider: ServiceProvider
 
     fun setServiceProvider(serviceProvider: ServiceProvider){
         this.serviceProvider = serviceProvider

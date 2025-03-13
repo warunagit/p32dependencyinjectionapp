@@ -9,8 +9,9 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
 
     //dependancy injection
-    //1-through constructor
+    //1-through constructor - recommended
     //2-through method
+    //3-through field
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,9 +25,13 @@ class MainActivity : AppCompatActivity() {
         val mobile = Mobile(battery,simCard,display)*/
 
         //dependancy inject through method
-        val serviceProvider = ServiceProvider()
+        /*val serviceProvider = ServiceProvider()
         val simCard = SimCard()
-        simCard.setServiceProvider(serviceProvider)
+        simCard.setServiceProvider(serviceProvider)*/
+
+        //dependancy injection through flield
+        val simCard = SimCard()
+        simCard.serviceProvider = ServiceProvider()
 
         //dependancy injection through constructor
         val mobile = Mobile(
